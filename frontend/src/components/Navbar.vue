@@ -44,7 +44,7 @@
 <script type="text/javascript">
 	export default{
 		name:'Navbar',
-		data: function () {
+		data() {
             return {
                 isLoading: true,
                 isFullPage: true,

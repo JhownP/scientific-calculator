@@ -29,13 +29,13 @@ Vue.use(VueAxios, axios.create({
 Vue.use(VueRouter)
 
 //MAPEANDO A CLASSE PARA CRIAR A URL
-import Calculator from '@/views/calculator/Index';
-import Documentation from '@/views/documentation/Index';
+import Calculator from '@/views/calculator/CalculatorForm';
+import Documentation from '@/views/documentation/DocumentationForm';
 
 //SELECIONANDO A MINHA CLASSE E ADICIONANDO A URL QUE FOI CRIADA
 const routes = [
-  { path: '/calculator.do' , component: Calculator, name: 'Calculator' },
-  { path: '/documentation.do', component: Documentation, name: 'Documentation' },
+  { path: '/calculator.do' , component: Calculator, name: 'CalculatorForm' },
+  { path: '/documentation.do', component: Documentation, name: 'DocumentationForm' },
 ]
 
 const router = new VueRouter({
