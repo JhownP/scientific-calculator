@@ -30,12 +30,10 @@ Vue.use(VueRouter)
 
 //MAPEANDO A CLASSE PARA CRIAR A URL
 import Calculator from '@/views/calculator/CalculatorForm';
-import Documentation from '@/views/documentation/DocumentationForm';
 
 //SELECIONANDO A MINHA CLASSE E ADICIONANDO A URL QUE FOI CRIADA
 const routes = [
-  { path: '/calculator.do' , component: Calculator, name: 'CalculatorForm' },
-  { path: '/documentation.do', component: Documentation, name: 'DocumentationForm' },
+  { path: '/calculator.do' , component: Calculator, name: 'CalculatorForm' }
 ]
 
 const router = new VueRouter({

@@ -9,7 +9,7 @@
 
         <!-- ADICIONANDO OS COMPONENTES DE INICIO -->
         <template slot="start">
-            <b-navbar-item href="/documentation.do" @click="this.openLoading">
+            <b-navbar-item href="https://github.com/JhownP/scientific-calculator/blob/master/README.md" target="_blank">
                 Documentation
             </b-navbar-item>
         </template>

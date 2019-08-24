@@ -8,10 +8,10 @@
                     <div class="column is-full">
                         <div class="result-visor">
                             <b-field label="Calculadora Ciêntifica">
-                                <b-input maxlength="200" 
-                                    type="textarea" 
+                                <b-input maxlength="15" 
+                                    type="textarea" v-model="valueVisor"
                                     :disabled="permission.visor.disabled" 
-                                    class="visor" rows="7"/>
+                                    class="visor" rows="3"/>
                             </b-field>
                         </div>
                     </div>
@@ -125,10 +125,20 @@
         name:'Calculator',
         data() {
             return {
+                valueVisor: 0,
                 permission: {
                     visor: {
                         disabled: true,
                     }
+                }
+            }
+        },
+        methods: {
+            addValuesVisor(value) {
+                if (valueVisor == 0) {
+                    valueVisor = value
+                } else if (valueVisor == ',')  {
+                    
                 }
             }
         }
@@ -171,11 +181,19 @@
     .result-visor >>> .visor > textarea {
         background-color: #eaeaea;
         border-radius: 15px;
+        text-align: right;
+        font-weight: bold;
+        vertical-align: bottom;
     }
 
     .visor {
         margin-left: 15px;
         margin-right: 15px;
+    }
+
+    .visor >>> textarea {
+        font-size: 30px;
+        color: #2f3640;
     }
 
     .nav-buttons {
