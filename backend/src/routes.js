@@ -13,13 +13,13 @@ const routes = express.Router();
 
 const urlBase = '/api/calculadora/v1';
 
-// routes.post(urlBase + '/arithmatic', CalculatorArithmetic.store);
-// routes.post(urlBase + '/cosine', CalculatorCosine.store);
-// routes.post(urlBase + '/factorial', CalculatorFactorial.store);
-// routes.post(urlBase + '/fibonacci', CalculatorFibonacci.store);
-// routes.post(urlBase + '/median', CalculatorMedian.store);
-// routes.post(urlBase + '/power', CalculatorPowerN.store);
-// routes.post(urlBase + '/sine', CalculatorSine.store);
-// routes.post(urlBase + '/tangent', CalculatorTangent.store);
+routes.post(urlBase + '/arithmatic', CalculatorArithmetic.store);
+routes.post(urlBase + '/cosine', CalculatorCosine.store);
+routes.post(urlBase + '/factorial', CalculatorFactorial.store);
+routes.post(urlBase + '/fibonacci', CalculatorFibonacci.store);
+routes.post(urlBase + '/median', CalculatorMedian.store);
+routes.post(urlBase + '/power', CalculatorPowerN.store);
+routes.post(urlBase + '/sine', CalculatorSine.store);
+routes.post(urlBase + '/tangent', CalculatorTangent.store);
 
 module.exports = routes;
