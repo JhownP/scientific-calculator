@@ -1,6 +1,6 @@
 module.exports = {
     calculate(number) {
-        if (number <= 1) {
+        if (number <= '1') {
             return number;
         } else {
             let initialNumber = 0;
@@ -10,7 +10,7 @@ module.exports = {
                 initialNumber = numberReturn;
                 numberReturn += aux;
             }
-            return numberReturn;
+            return numberReturn.toString();
         }
     }
 }

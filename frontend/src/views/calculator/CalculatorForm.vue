@@ -121,16 +121,14 @@
 </template>
 
 <script>
-    import CalculationMixin from './CalculatorMixin';
-
     export default {
         name:'calculator',
-        mixins: [CalculationMixin],
         data() {
             return {
                 valueVisor: '0',
                 validateComma: false,
                 validateSemicolon: false,
+                isLoading: false,
                 permission: {
                     visor: {
                         disabled: true,
@@ -152,31 +150,31 @@
                     this.valueVisor = '0';
                 }
             },
-            submitCalculate(value) {
+            async submitCalculate(value) {
                 switch (value) {
                     case 'Fibonacci':
-                        this.valueVisor = CalculationMixin.submitFibonacci(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/fibonacci');
                     break;
                     case 'Arithmetic':
-                        this.valueVisor = CalculationMixin.submitArithmatic(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/arithmatic');
                     break;
                     case 'Median':
-                        this.valueVisor = CalculationMixin.submitMedian(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/median');
                     break;
                     case 'Factorial':
-                        this.valueVisor = CalculationMixin.submitFactorial(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/factorial');
                     break;
                     case 'PowerN':
-                        this.valueVisor = CalculationMixin.submitPowerN(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/power');
                     break;
                     case 'Sine':
-                        this.valueVisor = CalculationMixin.submitSine(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/sine');
                     break;
                     case 'Cosine':
-                        this.valueVisor = CalculationMixin.submitCosine(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/cosine');
                     break;
                     case 'Tangent':
-                        this.valueVisor = CalculationMixin.submitTangent(value);
+                        this.valueVisor = await this.defaultFunctionCalculate(this.valueVisor, '/tangent');
                     break;
                 }
             },
@@ -211,6 +209,52 @@
                         position: 'is-top',
                         type: 'is-danger'
                     });
+                }
+            },
+            async defaultFunctionCalculate(numberCalculation, urlBase) {
+                this.isLoading = true;
+                try {
+                    if (numberCalculation != null && numberCalculation != '0') {
+                        const resp = await this.axios({
+                            method: 'post',
+                            url: urlBase,
+                            data: {
+                                numberCalculation: numberCalculation
+                            }
+                        });
+
+                        if (resp.data.numberReturn) {
+                            this.$buefy.toast.open({
+                                duration: 5000,
+                                message: 'Calculo Efetuado com Sucesso!',
+                                position: 'is-top',
+                                type: 'is-success'
+                            });
+
+                            return resp.data.numberReturn
+                        } else {
+                            return 0;
+                        }
+                    } else {
+                        this.$buefy.toast.open({
+                            duration: 5000,
+                            message: 'Informe um Número para Efetuar o Calculo!',
+                            position: 'is-top',
+                            type: 'is-warning'
+                        });
+
+                        return this.valueVisor = '0';
+                    }
+
+                } catch(err) {
+                    this.$buefy.toast.open({
+                        duration: 5000,
+                        message: 'Erro ao Efetuar o Calculo ' + err,
+                        position: 'is-top',
+                        type: 'is-danger'
+                    })                
+                } finally {
+                    this.isLoading = false;
                 }
             }
         },

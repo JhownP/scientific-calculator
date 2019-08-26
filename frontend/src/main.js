@@ -18,7 +18,7 @@ const production = process.env.NODE_ENV === 'production'
 
 //PREPARANDO URL DO BACKEND PARA CONEXÃO
 let splitURL = window.location.href.split('/');
-const baseURL = production ? `${splitURL[0]}/` : 'http://localhost:3000/';
+const baseURL = production ? `${splitURL[0]}/` : 'http://localhost:3000/api/calculadora/v1'; //Adicionar o IP de sua Maquina para testes no celular
 
 //ADICIONANDO A URL DE INICIO DO PROGRAMA
 Vue.use(VueAxios, axios.create({
