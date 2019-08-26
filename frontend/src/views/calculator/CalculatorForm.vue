@@ -233,7 +233,7 @@
 
                             return resp.data.numberReturn
                         } else {
-                            return 0;
+                            return this.valueVisor = '0';
                         }
                     } else {
                         this.$buefy.toast.open({
@@ -252,7 +252,8 @@
                         message: 'Erro ao Efetuar o Calculo ' + err,
                         position: 'is-top',
                         type: 'is-danger'
-                    })                
+                    })
+                    this.valueVisor = '0';
                 } finally {
                     this.isLoading = false;
                 }
