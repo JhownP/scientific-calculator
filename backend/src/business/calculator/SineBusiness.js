@@ -1,5 +1,5 @@
 module.exports = {
-    calculate(number) {
+    executeCalculate(number) {
         return Math.sin(number);
     }
 }

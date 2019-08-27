@@ -1,11 +1,11 @@
 const Arithmatic = require('../../business/calculator/ArithmaticBusiness');
 
 module.exports = {
-    store(req, res) {
-        const  { numberCalculation } = req.body;
-        if (numberCalculation) {
+    calculate(req, res) {
+        const { number } = req.query;
+        if (number) {
             return res.json({
-                numberReturn: Arithmatic.calculate(numberCalculation)
+                numberReturn: Arithmatic.executeCalculate(number)
             });
         }
     }

@@ -1,14 +1,20 @@
 module.exports = {
-    calculate(number) {
+    executeCalculate(number) {
+        let index = 0 
+        let initialNumber = 1
+        let aux = 0
+        let temp, numberReturn = [];
+
         if (number <= '1') {
-            return number;
+            return number.toString();
         } else {
-            let initialNumber = 0;
-            let numberReturn = 1;
-            for ( let index = 2; index <= number; index++ ) {
-                let aux = initialNumber;
-                initialNumber = numberReturn;
-                numberReturn += aux;
+            while (number > 0) {
+                temp = initialNumber;
+                initialNumber = initialNumber + aux;
+                aux = temp;
+                number--;
+                numberReturn[index] = aux;
+                index++;
             }
             return numberReturn.toString();
         }

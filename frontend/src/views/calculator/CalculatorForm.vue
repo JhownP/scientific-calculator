@@ -216,11 +216,8 @@
                 try {
                     if (numberCalculation != null && numberCalculation != '0') {
                         const resp = await this.axios({
-                            method: 'post',
-                            url: urlBase,
-                            data: {
-                                numberCalculation: numberCalculation
-                            }
+                            method: 'get',
+                            url: urlBase + '?number=' + this.valueVisor
                         });
 
                         if (resp.data.numberReturn) {

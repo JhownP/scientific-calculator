@@ -1,11 +1,11 @@
 const Sine = require('../../business/calculator/SineBusiness');
 
 module.exports = {
-    store(req, res) {
-        const  { numberCalculation } = req.body;
-        if (numberCalculation) {
+    calculate(req, res) {
+        const { number } = req.query;
+        if (number) {
             return res.json({
-                numberReturn: Sine.calculate(numberCalculation)
+                numberReturn: Sine.executeCalculate(number)
             });
         }
     }

@@ -1,11 +1,11 @@
 const Factorial = require('../../business/calculator/FactorialBusiness');
 
 module.exports = {
-    store(req, res) {
-        const  { numberCalculation } = req.body;
-        if (numberCalculation) {
+    calculate(req, res) {
+        const { number } = req.query;
+        if (number) {
             return res.json({
-                numberReturn: Factorial.calculate(numberCalculation)
+                numberReturn: Factorial.executeCalculate(number)
             });
         }
     }

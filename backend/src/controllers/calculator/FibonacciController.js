@@ -1,11 +1,11 @@
 const Fibonacci = require('../../business/calculator/FibonacciBusiness');
 
 module.exports = {
-    store(req, res) {
-        const  { numberCalculation } = req.body;
-        if (numberCalculation) {
+    calculate(req, res) {
+        const { number } = req.query;
+        if (number) {
             return res.json({
-                numberReturn: Fibonacci.calculate(numberCalculation)
+                numberReturn: Fibonacci.executeCalculate(number)
             });
         }
     }
