@@ -1,11 +1,15 @@
 module.exports = {
     executeCalculate(number) {
-        var parse = number.split(';').map(Number);
-        const valores = parse.slice().sort((a, b) => a - b);
-        const median = Math.floor(valores.length / 2);
-        if (valores.length % 2 === 0) {
-            return (valores[median - 1] + valores[median]) / 2;
+        let vectors = number.split(';').map(Number);
+        let median, var1, var2;
+        if (vectors.length % 2 == 0) {
+            var1 = (vectors.length / 2) -1;
+            var2 = var1 + 1;
+            median = (vectors[var1] + vectors[var2]) / 2;
+        } else {
+            var1 = (vectors.length / 2) -0.5;
+            median = vectors[var1];
         }
-        return valores[median];
+        return median.toString();
     }
 }
