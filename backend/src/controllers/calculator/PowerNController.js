@@ -1,11 +1,12 @@
-const PowerN = require('../../business/calculator/PowerNBusiness');
+const CalculateFunction = require('../../business/CalculateFunctionsBusiness');
+const calculete = new CalculateFunction();
 
 module.exports = {
     calculate(req, res) {
         const { number } = req.query;
         if (number) {
             return res.json({
-                numberReturn: PowerN.executeCalculate(number)
+                numberReturn: calculete.calculatePower(number)
             });
         }
     }

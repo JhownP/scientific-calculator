@@ -1,11 +1,12 @@
-const Fibonacci = require('../../business/calculator/FibonacciBusiness');
+const CalculateFunction = require('../../business/CalculateFunctionsBusiness');
+const calculete = new CalculateFunction();
 
 module.exports = {
     calculate(req, res) {
         const { number } = req.query;
         if (number) {
             return res.json({
-                numberReturn: Fibonacci.executeCalculate(number)
+                numberReturn: calculete.calculateFibonacci(number)
             });
         }
     }

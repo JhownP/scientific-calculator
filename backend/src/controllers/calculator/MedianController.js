@@ -1,11 +1,12 @@
-const Median = require('../../business/calculator/MedianBusiness');
+const CalculateFunction = require('../../business/CalculateFunctionsBusiness');
+const calculete = new CalculateFunction();
 
 module.exports = {
     calculate(req, res) {
         const { number } = req.query;
         if (number) {
             return res.json({
-                numberReturn: Median.executeCalculate(number)
+                numberReturn: calculete.calculateMedian(number)
             });
         }
     }

@@ -1,11 +1,12 @@
-const Arithmatic = require('../../business/calculator/ArithmaticBusiness');
+const CalculateFunction = require('../../business/CalculateFunctionsBusiness');
+const calculete = new CalculateFunction();
 
 module.exports = {
     calculate(req, res) {
         const { number } = req.query;
         if (number) {
             return res.json({
-                numberReturn: Arithmatic.executeCalculate(number)
+                numberReturn: calculete.calculateArithmatic(number)
             });
         }
     }

@@ -1,11 +1,12 @@
-const Factorial = require('../../business/calculator/FactorialBusiness');
+const CalculateFunction = require('../../business/CalculateFunctionsBusiness');
+const calculete = new CalculateFunction();
 
 module.exports = {
     calculate(req, res) {
         const { number } = req.query;
         if (number) {
             return res.json({
-                numberReturn: Factorial.executeCalculate(number)
+                numberReturn: calculete.calculateFactorial(number)
             });
         }
     }
