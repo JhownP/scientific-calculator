@@ -33,7 +33,7 @@
 
 <p style='text-align: justify;'>Com calculo de Média Aritmética recebemos um conjunto de valores que é passo pelo usuário por meio de querystring com a separação de ; entre os valores</p>
 
-<h4>EndPoint Calculo Média Aritmética - Método GET</h4>
+<h4>EndPoint Calculo Média Aritmética - <b style='color: #d63031;'>GET</b></h4>
 
 ``` r
     "http://localhost:3000/api/calculadora/v1/arithmatic"
@@ -52,5 +52,93 @@
 <img src="/frontend/src/assets/printsDocumentation/backend/CodeControllerArithmatic.png">
 
 ``` r
-    "{ numberReturn: <numeroRetorno> }"
+    "JSON -> { numberReturn: <numeroRetorno> }"
+```
+
+<h4>EndPoint Calculo Fatorial - <b style='color: #d63031;'>GET</b></h4>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1/factorial"
+```
+
+<p style='text-align: justify;'>Exemplo de envio de Requisição</p>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1//factorial?numeric=10"
+```
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeBusinessFactorial.png">
+
+<p style='text-align: justify;'>Retorno dos Endpoints será um JSON com o valor do calculo que é convertido diretamente em nosso controller.</p>
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeControllerFactorial.png">
+
+``` r
+    "JSON -> { numberReturn: <numeroRetorno> }"
+```
+
+<h4>EndPoint Calculo Fibonacci - <b style='color: #d63031;'>GET</b></h4>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1/fibonacci"
+```
+
+<p style='text-align: justify;'>Exemplo de envio de Requisição</p>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1//fibonacci?numeric=10"
+```
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeBusinessFibonacci.png">
+
+<p style='text-align: justify;'>Retorno dos Endpoints será um JSON com o valor do calculo que é convertido diretamente em nosso controller. Retornando uma lista de valores em String.</p>
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeControllerFibonacci.png">
+
+``` r
+    "JSON -> { numberReturn: <numeroRetorno> }"
+```
+
+<h4>EndPoint Calculo Mediana - <b style='color: #d63031;'>GET</b></h4>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1/median"
+```
+
+<p style='text-align: justify;'>Exemplo de envio de Requisição</p>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1//median?numeric=5;3"
+```
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeBusinessMedian.png">
+
+<p style='text-align: justify;'>Retorno dos Endpoints será um JSON com o valor do calculo que é convertido diretamente em nosso controller.</p>
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeControllerMedian.png">
+
+``` r
+    "JSON -> { numberReturn: <numeroRetorno> }"
+```
+
+<h4>EndPoint Calculo Potência de N - <b style='color: #d63031;'>GET</b></h4>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1/power"
+```
+
+<p style='text-align: justify;'>Exemplo de envio de Requisição</p>
+
+``` r
+    "http://localhost:3000/api/calculadora/v1//power?numeric=1;3;5;8;10"
+```
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeBusinessPowerN.png">
+
+<p style='text-align: justify;'>Retorno dos Endpoints será um JSON com o valor do calculo que é convertido diretamente em nosso controller.</p>
+
+<img src="/frontend/src/assets/printsDocumentation/backend/CodeControllerPowerN.png">
+
+``` r
+    "JSON -> { numberReturn: <numeroRetorno> }"
 ```
