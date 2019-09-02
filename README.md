@@ -33,7 +33,7 @@
 
 <p style='text-align: justify;'>Com calculo de Média Aritmética recebemos um conjunto de valores que é passo pelo usuário por meio de querystring com a separação de ; entre os valores</p>
 
-<h4>EndPoint Calculo Média Aritmética - <b style='color: #d63031;'>GET</b></h4>
+<h4>EndPoint Calculo Média Aritmética - <b style='color: #d63031 !important;'>GET</b></h4>
 
 ``` r
     "http://localhost:3000/api/calculadora/v1/arithmatic"
@@ -55,7 +55,7 @@
     "JSON -> { numberReturn: <numeroRetorno> }"
 ```
 
-<h4>EndPoint Calculo Fatorial - <b style='color: #d63031;'>GET</b></h4>
+<h4>EndPoint Calculo Fatorial - <b style='color: #d63031 !important;'>GET</b></h4>
 
 ``` r
     "http://localhost:3000/api/calculadora/v1/factorial"
@@ -77,7 +77,7 @@
     "JSON -> { numberReturn: <numeroRetorno> }"
 ```
 
-<h4>EndPoint Calculo Fibonacci - <b style='color: #d63031;'>GET</b></h4>
+<h4>EndPoint Calculo Fibonacci - <b style='color: #d63031 !important;'>GET</b></h4>
 
 ``` r
     "http://localhost:3000/api/calculadora/v1/fibonacci"
@@ -99,7 +99,7 @@
     "JSON -> { numberReturn: <numeroRetorno> }"
 ```
 
-<h4>EndPoint Calculo Mediana - <b style='color: #d63031;'>GET</b></h4>
+<h4>EndPoint Calculo Mediana - <b style='color: #d63031 !important;'>GET</b></h4>
 
 ``` r
     "http://localhost:3000/api/calculadora/v1/median"
@@ -121,7 +121,7 @@
     "JSON -> { numberReturn: <numeroRetorno> }"
 ```
 
-<h4>EndPoint Calculo Potência de N - <b style='color: #d63031;'>GET</b></h4>
+<h4>EndPoint Calculo Potência de N - <b style='color: #d63031 !important;'>GET</b></h4>
 
 ``` r
     "http://localhost:3000/api/calculadora/v1/power"
